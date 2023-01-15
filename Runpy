@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+echo"">apotelesmata.txt|echo "Dose onoma arxeiou python gia ektelesi:"
+read p
+
+echo "Theleis na ginei ektelesi tou $p (y/n):"
+read e
+
+if [ "$e" = "y" ];
+then
+    if [[ -f $p ]];
+    then
+        echo "Ektelesi tou $p..."
+        python $p > apotelesmata.txt|sleep 2
+        cat apotelesmata.txt
+    else
+        echo "To arxeio den vrethike!"
+    fi
+else
+    sleep 1 | echo "Den epileksate ektelesi tou $p..."
+    cat apotelesmata.txt
+fi
